@@ -1,0 +1,13 @@
+:root {
+	--font-size: calc(1rem + (1.25 - 1) * ((100vw - 18.75em) / (75 - 18.75)));
+	--line-height: 1.45;
+	--vertical-rhytm: calc(var(--basic-font-size)*var(--line-height));
+	line-height: var(--line-height);
+	font-size: var(--font-size);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
