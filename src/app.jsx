@@ -47,6 +47,7 @@ const Subtitle = H2.extend`
   }
 `;
 
+
 const Home = () => (
   <ShowWrapper>
     <Header>

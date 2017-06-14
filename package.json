@@ -1,10 +1,11 @@
 {
-  "name": "tc-modal",
+  "name": "tab-component",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "color": "^1.0.3",
     "prop-types": "^15.5.10",
+    "ramda": "^0.24.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
