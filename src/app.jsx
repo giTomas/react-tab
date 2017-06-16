@@ -16,7 +16,7 @@ const StyledLink = styled(Link)`
   width: 100%;
   text-align: right;
   text-decoration: none;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', sans-serif;
   color: grey;
   transition: color 0.33s ease-out;
   &:hover {
@@ -24,9 +24,15 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Default = ({match}) => (
-  <H1>{(match.url).toUpperCase().replace('/', '')}</H1>
+const Default = ({ match }) => (
+  <H2>{match.url.toUpperCase().replace('/', '')}</H2>
 );
+
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>No match for <code>{location.pathname}</code></h3>
+  </div>
+)
 
 const List = styled.ul`
   list-style: none;
@@ -70,6 +76,8 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/state" component={TabState} />
         <Route path="/router" component={TabRouter} />
+        <Route exact path="/mathematicians/:id" component={Default} />
+        <Route component={NoMatch}/>
       </Switch>
     </ColorWrapper>
   </Router>
