@@ -169,9 +169,12 @@ const Article = ({name, wiki, image, text}) => (
     <ArticleTitle>{name}</ArticleTitle>
     <WikiLink href={wiki}>by Wikipedia</WikiLink>
     <Image src={image} alt={name} />
-    {text.map((p, i) =>
+    {R.addIndex(R.map)((p, i) =>
+      <Paragraph key={ i.toString() }>{ p }</Paragraph>
+    , text)}
+    {/* {text.map((p, i) =>
       <Paragraph key={ i }>{ p }</Paragraph>
-  )}
+  )} */}
   </ArticleBody>
 );
 
@@ -187,7 +190,13 @@ const prepareArticle = (id) => {
 const RouteWithData = ({ data, ...rest }) => (
   <Route {...rest} render={({match, history}) => (
     <ArticleWrapper>
-      <Button type="button" onClick={(e) => {e.stopPropagation(); history.goBack()}}>Back To Menu</Button>
+      <Button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          history.goBack()}}>
+        Back To Menu
+      </Button>
       {prepareArticle(match.params.id)(data)}
     </ArticleWrapper>
   )}/>
