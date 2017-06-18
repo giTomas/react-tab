@@ -17,3 +17,12 @@ export const H2 = styled.h2`
     font-size: 3.052em;
   }
 `;
+
+export const H3 = styled.h3`
+  font-family: 'Comfortaa', cursive;
+  font-size: 3.157em;
+  font-weight: 300;
+  @media(max-width: 500px) {
+    font-size: 2.074em;
+  }
+`;
