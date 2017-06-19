@@ -9,7 +9,7 @@ import R from 'ramda';
 // import './app.css';
 import styled, { injectGlobal, keyframes } from 'styled-components';
 import { TabState, TabRouter } from './components';
-import { H1, H2, H3 } from './components/titles';
+import { H2, H3 } from './components/titles';
 import { ShowWrapper, ColorWrapper } from './components/animations';
 import mathematicians from './data/mathematicians';
 
